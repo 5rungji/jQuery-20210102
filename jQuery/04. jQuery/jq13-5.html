@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		html, body, *{
+			box-sizing: border-box;
+		}
+		
+		div{
+			display: inline;
+			color: red;
+		}
+		
+		span{
+			color: blue;
+		}
+		
+	</style>
+
+</head>
+<body>
+	
+	<p id="txt">
+		슈비두바 빠빠빠 슈비두바 빠빠빠 랄랄랄라라 라라라리라 장미꽃 한송이 받고 너에게 고백을 받고 내맘은 샤랄라라라 샤랄라라라
+	</p>
+	
+	<script>
+		
+		$(document).ready(function(){
+			$("#txt").html($("#txt").html().replace(/빠/g , "<div>빠</div>")).html($("#txt").html().replace(/라/g , "<span>라</span>"));				
+			
+		});
+
+		
+	</script>	
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		
+	</style>
+
+</head>
+<body>
+	
+	<button id="btn1">나타나기</button>
+	<button id="btn2">숨기기</button>
+	
+	<div></div>
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$("#btn1").click(function(){
+				$(window).resize(function(){
+					var x = $(window).width();
+					var y = $(window).height();
+					
+					$("div").css({
+						position: "relative",
+						left: x/4,
+						top: y/4,
+						width: x/2,
+						height: y/2,
+						backgroundColor: "blue"
+					});
+				});
+			});
+			
+			$("btn2").click(function(){
+				$("div").css({
+					width: 0,
+					height: 0
+				});
+			});
+			
+			
+		});
+		
+	</script>	
+</body>
+</html>
+

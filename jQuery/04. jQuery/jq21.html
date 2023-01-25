@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		
+	</style>
+
+</head>
+<body>
+	
+	<p> Hello </p>
+	<div> Number1 </div>
+	<div> Feel good </div>
+	
+	<script>
+		$(document).ready(function(){
+			//hover(마우스 올렸을때, 마우스 뺏을 때)
+
+			
+			
+			$("p").hover(function(){
+				$("div").eq(0).css("backgroundColor","red");
+			}, function(){
+				$("div").eq(1).css("backgroundColor", "blue");
+			});
+			
+			
+		});
+		
+	</script>	
+</body>
+</html>

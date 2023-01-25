@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+	</style>
+
+</head>
+<body>
+
+	<p id="test"> This is some <b>bold</b> text in a paragraph.</p>
+	<p>Name: <input type="text" id="test2" value="Michey"></p>
+	
+	<button id="btn1"> Show Text </button>
+	<button id="btn2"> Show HTML </button>
+	<button id="btn3"> Show Value </button>
+	
+	<button id="btn4"> Show Text </button>
+	<button id="btn5"> Show HTML </button>
+	<button id="btn6"> Show Value </button>
+	
+	<script>
+		
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				alert("text: " + $("#test").text());
+			});
+			$("#btn2").click(function(){
+				alert("HTML: " + $("#test").html());
+			});
+			$("#btn3").click(function(){
+				alert("Value: " + $("#test2").val());
+			});
+			
+			$("#btn4").click(function(){
+				$("#test").text("<b>Hello World</b>")
+			});
+			$("#btn5").click(function(){
+				$("#test").html("<b>Hello World</b>")
+			});
+			$("#btn6").click(function(){
+				$("#test2").val("Dolly")
+			});
+		})
+
+		
+	</script>	
+</body>
+</html>
+
+
+<!--
+
+text() > 태그 사이의 글씨만 가져욤
+
+html() > 태그사이의 글씨만 가져오는데 안에 태그가 있을경우 태그까지 가져옴
+
+val() > 값 가져옴
+var a = $("div").val();
+
+-->

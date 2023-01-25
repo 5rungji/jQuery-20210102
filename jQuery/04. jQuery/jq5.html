@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<style>
+		
+	</style>
+</head>
+<body>
+	
+	<button id="a1"> Start Animation </button>
+	<div id="a" style="background: #98bf21; height: 100px; width: 100px; position: relative;"></div>
+	<br>
+	
+	<button id="b1"> Start Animation </button>
+	<div id="b" style="background: #98bf21; height: 100px; width: 100px; position: relative;"></div>
+	<br>
+	
+	<button id="c1"> Start Animation </button>
+	<div id="c" style="background: #98bf21; height: 100px; width: 100px; position: relative;">txt</div>
+	<br>
+	
+	<script>
+		
+		$(document).ready(function(){
+			$("#a1").click(function(){
+				$("#a").animate({
+					height: 'toggle'
+				});
+			});
+			
+			$("#b1").click(function(){
+				var div = $("#b");
+				div.animate({height: '300px', opacity: '0.4'}, 'slow');
+				div.animate({height: '300px', opacity: '0.8'}, 'slow');
+				div.animate({height: '100px', opacity: '0.4'}, 'slow');
+				div.animate({height: '100px', opacity: '0.8'}, 'slow');
+			});
+			
+			$("#c1").click(function(){
+				var div = $("#c");
+				div.animate({left:'100px'}, 'slow' );
+				div.animate({fontSize: '3em'});
+			});
+			
+		});
+
+	</script>
+</body>
+</html>

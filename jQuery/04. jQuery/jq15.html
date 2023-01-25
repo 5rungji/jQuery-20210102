@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		div{
+			width: 100px;
+			height: 300px;
+			border: 1px solid black;
+			position: absolute;
+		}
+		
+	</style>
+
+</head>
+<body>
+	
+	<div></div>
+	<button style="margin-top: 400px">push</button>
+	
+	
+	<script>
+		
+		$(function(){
+			$("button").click(function(){
+				$("div").animate({
+					height: "100px"
+				}, 500);
+				
+				$("div").animate({
+					left: "100px"
+				},500);
+				
+				$("div").animate({
+					top: "100px"
+				},500);
+				
+				$("div").animate({
+					left: "200px"
+				},500);
+				
+				
+			});
+			
+			
+			
+		});
+		
+	</script>	
+</body>
+</html>
+

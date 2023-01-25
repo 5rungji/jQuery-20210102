@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		
+	</style>
+
+</head>
+<body>
+	
+	
+
+		<script>
+		$(document).ready(function(){
+			//mousewheel 크롬용
+			//DOMMouseScroll 파이어폭스용
+			$("html, body").on("mousewheel DOMMouseScroll", function(e){
+				// 스크롤 받아오는 법(휠을 올렸는지 내렸는지 알 수있음)
+				
+				/*
+				var chrome = e.originalEvent.wheelDelta;
+				// 크롬: 올리면 120 내리면 -120
+				
+				var fireFox = e.originalEvent.detail;
+				// 파폭: 올리면 -3 내리면 3
+				
+				alert(chrome); // 휠을 올렸는지 내렸는지 알 수있음
+				
+				*/
+				
+				
+				var E = e.originalEvent;
+				var delta = 0;
+				
+				// 파이어폭스
+				if(E.detail){
+					delta = E.detail*-40;
+				}
+				else{
+					delta = E.wheelDelta;
+					if(window.opera){
+						delta = -delta;
+					}
+				}
+				
+				$("body").text(delta);
+				
+				
+			});
+			
+			
+		});
+		
+	</script>	
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+        
+        *{
+            list-style: none;
+            padding: 0px;
+        }
+        
+        ul>li:nth-child(1){
+            font-size: 16px;
+            font-weight: 700;
+        }
+        
+        .answer{
+            background-color:orange;
+            display: inline;
+        }
+        
+        button{
+            padding: 2px 5px;
+        }
+
+
+		
+	</style>
+
+</head>
+<body>
+	
+	<ul>
+        <li>1. 첫번째 문제입니다. Sample3</li>
+	    <li>① Sample 1</li>
+	    <li>② Sample 2</li>
+	    <li>③ Sample 3</li>
+	    <li>④ Sample 4</li>
+	</ul>
+	<ul>  
+        <li>2. 두번째 문제입니다. Sample2</li>
+	    <li>① Sample 1</li>
+	    <li>② Sample 2</li>
+	    <li>③ Sample 3</li>
+	    <li>④ Sample 4</li>
+	</ul>
+	<ul>  
+        <li>3. 세번째 문제입니다. Sample3</li>
+	    <li>① Sample 1</li>
+	    <li>② Sample 2</li>
+	    <li>③ Sample 3</li>
+	    <li>④ Sample 4</li>
+	</ul>
+
+	<button id="btn1"> 정답 </button>
+	
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$("#btn1").click(function(){
+				$("ul:nth-child(1)>li:nth-child(4)").addClass("answer");
+				$("ul:nth-child(2)>li:nth-child(3)").addClass("answer");
+				$("ul:nth-child(3)>li:nth-child(5)").addClass("answer");
+			});
+		});
+		
+	</script>	
+</body>
+</html>

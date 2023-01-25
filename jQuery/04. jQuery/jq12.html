@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+	</style>
+
+</head>
+<body>
+	
+	<p>This is paragraph.</p>
+	<p>This is another pararagraph.</p>
+	
+	
+	<ol>	
+		<li>List item1</li>
+		<li id="test">List item2</li>
+		<li>List item3</li>
+	</ol>
+	
+	<button id="btn1"> Append text </button>
+	<button id="btn2"> Append List items </button>
+	<button id="btn3"> After List items </button>
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$("#btn1").click(function(){
+				//$("p").append("<b>Appended text</b>");
+				$("p").prepend("<b>Appended text</b>");
+			});
+			
+			$("#btn2").click(function(){
+				//$("ol").append("<li>Appended item</li>");
+				$("ol").prepend("<li>Appended item</li>");
+			});
+			
+			$("#btn3").click(function(){
+				//$("#test").after("<li>Appended item</li>");
+				//$("#test").before("<li>Appended item</li>");
+				//$("#test").empty();
+				$("#test").remove();
+			});
+			
+			
+			
+		})
+
+		
+	</script>	
+</body>
+</html>
+

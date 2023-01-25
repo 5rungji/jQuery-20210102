@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		
+		p{
+			width: 100px;
+			height: 100px;
+			background-color: deepskyblue;
+		}
+		
+	</style>
+
+</head>
+<body>
+	
+	<div>
+		<p></p>
+	</div>
+
+		<script>
+			
+			$(function(){
+				//div 안에 있는 p 에 대한 이벤트
+				
+				$("div").on("click", "p", function(){
+					alert("PANG!");
+					$(this).css("backgroundColor","red");
+				});
+				
+			});
+		
+	</script>	
+</body>
+</html>

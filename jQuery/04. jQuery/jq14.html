@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+   
+    <style>
+        *, html, body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }    
+        
+        #wrap{
+            border: 1px solid black;
+            width: 800px; height: 600px;
+            margin: 30px;
+            padding: 10px;
+            display: block; content: ''; clear: both;
+            position: relative;
+        }
+        
+        #number{
+            float: left;
+        }
+        
+        .contant{
+            float: right;
+        }
+        
+        .box{
+            width: 50px; height: 50px;
+            background-color: #000000;
+            position: absolute;
+            top: 0px; left: 0px;
+        }
+		
+        
+    </style>
+    
+</head>
+<body>
+    <div id="wrap">
+        <p id="number">0</p>
+        <span class="contant">
+            <input type="text" id="txt">
+            <input type="button" value="시작" id="start">
+        </span>
+    </div>
+    
+    <script>
+        
+		$(document).ready(function(){
+			
+			$("#start").click(function(){
+				
+				$(".box").remove();
+				
+				num = $("#txt").val();
+				$("#number").text(num);
+				
+				for(var i = 1; i <=num; i++){
+					
+					var top = Math.floor(Math.random()*510+40);
+					var left = Math.floor(Math.random()*750);
+					var color = "#" + Math.floor(Math.random()*0xffffff).toString(16);
+					
+					var box = $("<div class= 'box'></div>").text(i);
+					
+					box.css({
+						left: left,
+						top: top,
+						backgroundColor: color
+					});
+					
+					$("#wrap").append(box);
+					
+				}
+				
+			});
+			
+			
+			$("#wrap").on("click", ".box", function(){
+				
+				var boxNum = $(this).text();
+				
+				if(boxNum == num){
+				   $(this).remove();
+					num = num - 1;
+				   }
+
+				
+			})
+			
+		});
+		
+		
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

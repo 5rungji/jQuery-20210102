@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<style>
+		*, html, body{
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+			color: black;
+		}
+		
+		#wrap::after{
+			display: block; content: ''; clear: both;
+		}
+		
+		.mainmenu{
+			width: 120px;
+			border: 1px solid black;
+			text-align: center;
+			background-color: aquamarine;
+			float: left;
+				
+		}
+		
+		a{
+			padding: 10px;
+			display: block;
+			text-decoration: none;
+		}
+		
+		.submenu>li{			
+			width: 100px;
+			padding: 10px;
+			background-color: aqua;
+		}
+		
+		.submenu{
+			display: none;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<ul id="wrap">
+		<li class="mainmenu">
+			<a href="#">Menu1</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+		<li class="mainmenu">
+			<a href="#">Menu2</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+		<li class="mainmenu">
+			<a href="#">Menu3</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+		<li class="mainmenu">
+			<a href="#">Menu4</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+	</ul>
+		
+	
+	<script>
+		
+		
+		$(document).ready(function(){
+			
+			$(".mainmenu>a").click(function(){
+				$(this).siblings(".submenu").toggle(600);
+			});
+
+			
+		});
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		html, body, *{
+			box-sizing: border-box;
+			margin: 5px;
+		}
+		
+		#sample{
+			border: 1px solid black;
+			width: 100px; height: 100px;
+		}
+		
+		
+	</style>
+
+</head>
+<body>
+	
+	<input type="text" id="wid"> x <input type="text" id="hei">
+	<input type="button" value="크기조절" id="size">
+	
+	<br>
+	
+	<select name="" id="pickCol">
+		<option value="red">red</option>
+		<option value="blue">blue</option>
+		<option value="yellow">yellow</option>
+	</select>
+	<input type="button" value="색상" id="viewCol">
+	
+	<div id="sample"></div>
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$("#size").click(function(){
+				$("#sample").animate({
+					width: $("#wid").val() + "px",
+					height: $("#hei").val() + "px"
+				});
+			});
+			
+			$("#viewCol").click(function(){				
+				$("#sample").animate({
+					backgroundColor: $("#pickCol").val()
+				})
+			})
+			
+			
+		});
+
+		
+	</script>	
+</body>
+</html>
+

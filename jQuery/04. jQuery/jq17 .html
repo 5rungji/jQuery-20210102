@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+
+		
+	</style>
+
+</head>
+<body>
+	
+	<ul class="root">
+		<li> 1번 </li>
+		<li> 2번 </li>
+		<li class="child3"> 3번 
+			<ul>
+				<li class="child31"> 3-1번 </li>
+				<li> 3-2번 </li>
+			</ul>		
+		</li>
+	</ul>
+	
+	<button id="btn1">$(".root").children().detach();</button>
+	<button id="btn2">$(".root").prev().prev().detach();</button>
+	<button id="btn3">$(".root").prev().prev().next().detach();</button>
+	<button id="btn4">$(".root").children().children().detach();</button>
+	<button id="btn5">$(".root").parent().parent().prev().detach();	</button>
+
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$("#btn1").click(function(){
+				$(".root").children().detach();				
+			});
+			
+			$("#btn2").click(function(){
+				$(".child3").prev().prev().detach();				
+			});
+			
+			$("#btn3").click(function(){
+				$(".child3").prev().prev().next().detach();				
+			});
+			
+			$("#btn4").click(function(){
+				$(".root").children().children().detach();				
+			});
+			
+			$("#btn5").click(function(){
+				$(".child31").parent().parent().prev().detach();				
+			});
+			
+		});
+		
+	</script>	
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+	</style>
+
+</head>
+<body>
+
+	<p id="p1"> jQuery </p>
+	<button>click</button>
+	
+	<script>
+		
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("#p1").css("color","red").slideUp(2000).slideDown(2000);
+			});
+		});
+		
+	</script>	
+</body>
+</html>
+

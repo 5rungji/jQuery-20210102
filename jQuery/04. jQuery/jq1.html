@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	
+	<h2>버튼을 누르면 글씨가 사라집니다.</h2>
+	<p>p태그 사이의 글들만 사라집니다.</p>
+	<p>버튼을 눌러보세요.</p>
+	
+	<button>여기를 눌러주세요!</button>
+
+	<script>
+		$(document).ready(function(){
+			
+			$("button").click(function(){
+				$("p").hide();
+			});
+			
+			//$("*") 전부
+			//$("this") 현재 선택한 HTML 엘리먼트
+			//$(".intro") 클래스
+			//$("p.intro") p태그중에 클래스
+			//$("p:first") p태그중에 첫번째
+			//$("ul li:first") 내가아는 그거
+			//$("ul li:first-child") 위와 같음
+			
+			/*=================================================*/
+			
+			//마우스이벤트
+			// click
+			// dblclick
+			// mouseenter //over
+			// mouseleave //out
+			
+			//키보드 이벤트
+			//keypress 꾹 누르고 있는 것
+			//keydown  누르기만 하면 되는것
+			//keyup
+			
+			//form 이벤트
+			// submit
+			// change
+			// focus 활성화
+			// blur  활성화 안될때
+			
+			//load resize(창크기바뀜) scroll(휠) unload(인터넷문제나 로드 실패시) on(사용자정의 이벤트)
+			
+			/*=================================================*/
+			
+			
+			
+			
+		});
+	</script>
+	
+</body>
+</html>

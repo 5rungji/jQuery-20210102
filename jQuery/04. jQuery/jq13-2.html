@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		html, body, *{
+			box-sizing: border-box;
+		}
+		
+		#wrap{
+			border: 1px solid black;
+			width: 300px;
+			height: 200px;
+			position: relative;
+			overflow: hidden;	
+		}
+		
+		#banner{
+			display: flex;
+			background-color: aqua;
+			position: absolute; top: 0px; left: 0px;
+		}
+		
+		.banner{
+			width: 300px; height: 200px;
+			flex-wrap: nowrap;
+		}
+		
+		input{
+			width: 50px; height: 30px;
+			margin-top: 10px;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+	
+	<div id="wrap">
+		<div id="banner">
+			<img src="/image/8.jpg" alt="" class="banner">
+			<img src="/image/9.jpg" alt="" class="banner">
+			<img src="/image/10.jpg" alt="" class="banner">
+			<img src="/image/11.jpg" alt="" class="banner">
+		</div>
+	</div>
+	
+	<input type="button" value="←" id="left">
+	<input type="button" value="→" id="right">
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$("#right").click(function(){
+				
+				$("#banner").animate({
+				   marginLeft: "-=300px"
+				}, 500, function(){
+					$("#banner").css("margin-left","0px");
+
+					var first = $(".banner:nth-child(1)").detach();
+					$("#banner").append(first);
+					$("#banner").css("margin-left","0px");
+				});
+			});
+			
+			
+			$("#left").click(function(){
+				
+				var last = $(".banner:nth-child(4)").detach();
+				$("#banner").prepend(last);
+				$("#banner").css("margin-left","-300px");
+				
+				
+				$("#banner").animate({
+					marginLeft: "+=300px"
+				}, 500);
+			});
+		});
+		
+	</script>	
+</body>
+</html>
+

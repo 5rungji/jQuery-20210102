@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<style>
+		*, html, body{
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+			color: black;
+		}
+		
+		#wrap::after{
+			display: block; content: ''; clear: both;
+		}
+		
+		.mainmenu{
+			width: 120px;
+			border: 1px solid black;
+			text-align: center;
+			background-color: aquamarine;
+			float: left;
+				
+		}
+		
+		a{
+			padding: 10px;
+			display: block;
+			text-decoration: none;
+		}
+		
+		.submenu>li{			
+			width: 100px;
+			padding: 10px;
+			background-color: aqua;
+		}
+		
+		.submenu{
+			display: none;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<ul id="wrap">
+		<li class="mainmenu">
+			<a href="#" id="aHide">hide</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+		<li class="mainmenu">
+			<a href="#" id="aFade">fade</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+		<li class="mainmenu">
+			<a href="#" id="aSlide">slide</a>
+			<ul class="submenu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+	</ul>
+		
+	
+	<script>
+		
+		
+		$(document).ready(function(){
+			
+			$("#aHide").hover(function(){
+				$(this).siblings(".submenu").stop().show(600);
+			},function(){
+				$(this).siblings(".submenu").stop().hide(600);
+			});
+			
+			//stop: 마우스를 여러번 움직일때, 이전 애니메이션이 멈추기 전까지 애니메이션이 동작하지 않는 현상을 해결
+			
+			$("#aFade").hover(function(){
+				$(this).siblings(".submenu").stop().fadeIn(600);
+			},function(){
+				$(this).siblings(".submenu").stop().fadeOut(600);
+			});
+			
+			$("#aSlide").hover(function(){
+				$(this).siblings(".submenu").stop().slideDown(600);
+			},function(){
+				$(this).siblings(".submenu").stop().slideUp(600);
+			});
+
+			
+		});
+		
+
+	</script>
+</body>
+</html>

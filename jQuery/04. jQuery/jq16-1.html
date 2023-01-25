@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		html, body, *{
+			box-sizing: border-box;
+		}
+		
+		#wrap{
+			border: 1px solid black;
+			width: 300px;
+			height: 200px;
+		}
+		
+		#banner{
+			display: flex;
+			background-color: aqua;
+			position: relative;
+		}
+		
+		.banner{
+			width: 300px; height: 200px;
+			flex-wrap: nowrap;
+			position: absolute; top: 0px; left: 0px;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+	
+	<div id="wrap">
+		<div id="banner">
+			<img src="/image/8.jpg" alt="" class="banner">
+			<img src="/image/9.jpg" alt="" class="banner">
+			<img src="/image/10.jpg" alt="" class="banner">
+			<img src="/image/11.jpg" alt="" class="banner">
+		</div>
+	</div>	
+	
+	<script>
+		
+		$(document).ready(function(){
+			
+			$(".banner:nth-child(4)").fadeOut(1000);
+			
+			
+			setInterval(function(){
+				
+				$(".banner:nth-child(3)").fadeOut(1000);
+				var last = $(".banner:nth-child(4)").detach();
+				$("#banner").prepend(last);
+				$(".banner:nth-child(1)").fadeIn();
+
+			},1000);
+			
+		});
+		
+	</script>	
+</body>
+</html>
+

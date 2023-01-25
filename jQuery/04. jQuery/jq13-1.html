@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" integrity="sha256-Wp3wC/dKYQ/dCOUD7VUXXp4neLI5t0uUEF1pg0dFnAE="   crossorigin="anonymous"></script>
+	
+	<style>
+		
+		html, body, *{
+			box-sizing: border-box;
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		#wrap{
+			border: 1px solid black;
+			width: 350px;
+			height: 300px;
+		}
+		#main{
+			border: 1px solid black;
+			width: 330px; height: 200px;
+			margin: 10px;
+			position: relative;
+		}
+		
+		.mainImg{
+			width: 100%; height: 100%;
+			position: absolute;
+		}
+		
+		#sub{
+			margin: 10px;
+			width: 330px;
+		}
+		
+		.banner{
+			width: 78px; height: 70px;
+		}
+		
+	</style>
+
+</head>
+<body>
+	
+	<div id="wrap">
+		<div id="main">
+			<img src="/image/8.jpg" alt="" id="mainImg2" class="mainImg">
+			<img src="/image/8.jpg" alt="" id="mainImg1" class="mainImg">
+		</div>
+		<div id="sub">
+			<img src="/image/8.jpg" alt="" class="banner">
+			<img src="/image/5.jpg" alt="" class="banner">
+			<img src="/image/6.jpg" alt="" class="banner">
+			<img src="/image/4.jpg" alt="" class="banner">
+		</div>
+		
+	</div>		
+	
+	
+	<script>
+		
+		$(document).ready(function(){			
+			
+			$(".banner").hover(function(){
+				
+				temp1 = $(this).attr("src");
+				temp2 = $("#mainImg1").attr("src");
+				
+				$("#mainImg2").stop().attr("src",temp2);
+				$("#mainImg1").css("opacity","0").stop().attr("src",temp1).animate({opacity:1},500);
+			});
+		});
+		
+	</script>	
+</body>
+</html>
+
